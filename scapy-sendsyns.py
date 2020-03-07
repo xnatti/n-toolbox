@@ -12,7 +12,7 @@ import random
 
 
 
-def sendsyns(ip, count, port):
+def sendsyns(ip, port, count):
     counter = 0
     while counter < count:
         counter += 1
