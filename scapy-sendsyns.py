@@ -29,3 +29,13 @@ def sendsyns(ip, port, count):
         scapy.send(scapy.IP(dst=ip)/scapy.TCP(dport=port, sport=sourceport))
 
 
+# using sendp may be faster...
+
+def sendpsyns(ip, port, count):
+    counter = 0
+    while counter < count:
+        counter += 1
+        sourceport = random.randint(3000,8000)
+        scapy.sendp(scapy.Ether()/scapy.IP(dst=ip)/scapy.TCP(dport=port, sport=sourceport), iface="eth0")
+
+
